@@ -15,7 +15,7 @@ export const NAV_ITEMS: NavItem[] = [
     external: true,
   },
   { label: "Projects", href: "/projects", icon: "folder" },
-  { label: "Resume", href: "/resume", icon: "file" },
+  { label: "Resume", href: "/resume", icon: "file", external: true },
   { label: "Blog", href: "/blog", icon: "book" },
   {
     label: "LinkedIn",
