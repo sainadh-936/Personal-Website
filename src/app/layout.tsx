@@ -3,12 +3,12 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
 
-const geistSans = Geist({
+export const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+export const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   description:
     "Portfolio, resume, and blog of Sainadh. Projects, contact, and more.",
 };
+
+export const bodyClass = `${geistSans.variable} ${geistMono.variable} antialiased`;
+
+export const backgroundClass = `bg-gradient-to-br from-blue-50 via-white to-blue-100`;
 
 export default function RootLayout({
   children,
@@ -47,11 +51,7 @@ export default function RootLayout({
         />
         <meta name="twitter:image" content="https://i.pravatar.cc/300?img=3" />
       </Head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${bodyClass} ${backgroundClass}`}>{children}</body>
     </html>
   );
 }
