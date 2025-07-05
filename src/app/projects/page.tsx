@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { backgroundClass } from "../layout";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import Link from "next/link";
 
@@ -64,7 +63,7 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <div className={`min-h-screen ${backgroundClass}`}>
+    <div className="min-h-screen bg-main-gradient">
       <Head>
         <title>Projects | Sainadh Jammigumpala</title>
         <meta

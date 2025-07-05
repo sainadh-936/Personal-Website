@@ -1,13 +1,10 @@
 import Link from "next/link";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import Head from "next/head";
-import { backgroundClass } from "../layout";
 
 export default function AboutPage() {
   return (
-    <div
-      className={`${backgroundClass} flex flex-col items-center justify-center min-h-screen relative text-black`}
-    >
+    <div className="bg-main-gradient flex flex-col items-center justify-center min-h-screen relative text-black">
       <main style={{ maxWidth: "800px", margin: "0 auto", padding: "2rem" }}>
         <Link
           href="/"

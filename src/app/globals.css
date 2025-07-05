@@ -37,3 +37,7 @@ body {
     opacity: 1;
   }
 }
+
+.bg-main-gradient {
+  @apply bg-gradient-to-br from-blue-50 via-white to-blue-100;
+}

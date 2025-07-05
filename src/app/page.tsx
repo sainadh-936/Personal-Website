@@ -6,7 +6,7 @@ export default function HomePage() {
   // Use a realistic avatar from i.pravatar.cc
   const profileUrl = "/profile.png";
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-100">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-main-gradient">
       {/* Navigation - Desktop Circular, Mobile Stacked */}
       <div className="relative w-[340px] h-[340px] hidden md:block">
         {/* Circular navigation */}
