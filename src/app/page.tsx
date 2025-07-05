@@ -39,12 +39,24 @@ export default function HomePage() {
         </div>
       </div>
       {/* Mobile stacked navigation */}
-      <div className="flex flex-col gap-6 w-full max-w-sm md:hidden mt-8">
-        {NAV_ITEMS.map((item) => (
-          <div key={item.label} className="w-full">
-            <NavItem item={item} large />
-          </div>
-        ))}
+      <div className="flex flex-col items-center w-full max-w-sm md:hidden mt-8">
+        <div className="mb-6">
+          <Image
+            src={profileUrl}
+            alt="Profile Photo"
+            width={200}
+            height={200}
+            className="rounded-full border-4 border-blue-200 shadow-xl bg-white"
+            priority
+          />
+        </div>
+        <div className="grid grid-cols-2 gap-4 w-full">
+          {NAV_ITEMS.map((item) => (
+            <div key={item.label} className="w-full flex justify-center">
+              <NavItem item={item} large />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
