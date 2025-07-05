@@ -4,7 +4,7 @@ import { NavItem } from "./components/NavItem";
 
 export default function HomePage() {
   // Use a realistic avatar from i.pravatar.cc
-  const profileUrl = "https://i.pravatar.cc/120?img=3";
+  const profileUrl = "/profile.png";
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-100">
       {/* Navigation - Desktop Circular, Mobile Stacked */}
