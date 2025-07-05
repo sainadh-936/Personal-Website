@@ -1,39 +1,45 @@
+// This is the backend (Nodemailer) contact form version. For the frontend-only (mailto) version, see contact-mailto/page.tsx.
 "use client";
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeftOutlined } from "@ant-design/icons";
-import emailjs from "@emailjs/browser";
 
 const backgroundClass = `bg-gradient-to-br from-gray-100 via-white to-gray-200`;
 
-export default function ContactEmailJSPage() {
+export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [error, setError] = useState("");
 
-  function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("loading");
     setError("");
     try {
-      const serviceId = "service_blca2h8";
-      const templateId = "template_jjdylib";
-      const publicKey = "QBaUrncEO0saV3t70";
-      await emailjs.send(serviceId, templateId, form, publicKey);
-      setStatus("success");
-      setForm({ name: "", email: "", message: "" });
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+        setError("Something went wrong.");
+      }
     } catch {
       setStatus("error");
-      setError("Something went wrong. Please try again later.");
+      setError("Something went wrong.");
     }
+  }
+
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
+    setForm({ ...form, [e.target.name]: e.target.value });
   }
 
   return (
@@ -116,3 +122,8 @@ export default function ContactEmailJSPage() {
     </div>
   );
 }
+
+// Add minimal fade-in animation
+// In your globals.css or a component style:
+// .animate-fade-in { animation: fadeIn 0.5s ease; }
+// @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
