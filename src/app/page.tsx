@@ -8,13 +8,15 @@ export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-main-gradient">
       {/* Navigation - Desktop Circular, Mobile Stacked */}
-      <div className="relative w-[480px] h-[480px] hidden md:block">
+      <div className="relative w-[800px] h-[800px] hidden md:block">
         {/* Circular navigation */}
         {NAV_ITEMS.map((item, i) => {
           const angle = (i / NAV_ITEMS.length) * 2 * Math.PI;
-          const radius = 200;
-          const x = Math.cos(angle) * radius + 240 - 48;
-          const y = Math.sin(angle) * radius + 240 - 48;
+          const radius = 250;
+          const center = 400;
+          const itemSize = 120;
+          const x = Math.cos(angle) * radius + center - itemSize / 2;
+          const y = Math.sin(angle) * radius + center - itemSize / 2;
           return (
             <div
               key={item.label}
@@ -29,8 +31,8 @@ export default function HomePage() {
           <Image
             src={profileUrl}
             alt="Profile Photo"
-            width={200}
-            height={200}
+            width={300}
+            height={300}
             className="rounded-full border-8 border-blue-200 shadow-2xl bg-white"
             priority
           />
