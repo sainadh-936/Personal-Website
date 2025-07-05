@@ -8,19 +8,19 @@ export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-main-gradient">
       {/* Navigation - Desktop Circular, Mobile Stacked */}
-      <div className="relative w-[340px] h-[340px] hidden md:block">
+      <div className="relative w-[480px] h-[480px] hidden md:block">
         {/* Circular navigation */}
         {NAV_ITEMS.map((item, i) => {
           const angle = (i / NAV_ITEMS.length) * 2 * Math.PI;
-          const radius = 130;
-          const x = Math.cos(angle) * radius + 170 - 32;
-          const y = Math.sin(angle) * radius + 170 - 32;
+          const radius = 200;
+          const x = Math.cos(angle) * radius + 240 - 48;
+          const y = Math.sin(angle) * radius + 240 - 48;
           return (
             <div
               key={item.label}
               style={{ position: "absolute", left: x, top: y }}
             >
-              <NavItem item={item} />
+              <NavItem item={item} large />
             </div>
           );
         })}
@@ -29,18 +29,18 @@ export default function HomePage() {
           <Image
             src={profileUrl}
             alt="Profile Photo"
-            width={120}
-            height={120}
-            className="rounded-full border-4 border-blue-200 shadow-xl bg-white"
+            width={200}
+            height={200}
+            className="rounded-full border-8 border-blue-200 shadow-2xl bg-white"
             priority
           />
         </div>
       </div>
       {/* Mobile stacked navigation */}
-      <div className="flex flex-col gap-4 w-full max-w-xs md:hidden mt-4">
+      <div className="flex flex-col gap-6 w-full max-w-sm md:hidden mt-8">
         {NAV_ITEMS.map((item) => (
           <div key={item.label} className="w-full">
-            <NavItem item={item} />
+            <NavItem item={item} large />
           </div>
         ))}
       </div>
