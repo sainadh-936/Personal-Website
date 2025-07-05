@@ -9,6 +9,12 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "About Me", href: "/about", icon: "user" },
   { label: "Contact Me", href: "/contact", icon: "mail" },
   {
+    label: "Github",
+    href: "https://github.com/sainadh-936",
+    icon: "github",
+    external: true,
+  },
+  {
     label: "Instagram",
     href: "https://www.instagram.com/jsn_manhwa/",
     icon: "instagram",

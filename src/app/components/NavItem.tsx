@@ -9,6 +9,7 @@ import {
   FileTextOutlined,
   BookOutlined,
   LinkedinOutlined,
+  GithubOutlined,
 } from "@ant-design/icons";
 
 const ICONS: Record<string, React.ReactNode> = {
@@ -19,6 +20,7 @@ const ICONS: Record<string, React.ReactNode> = {
   file: <FileTextOutlined style={{ fontSize: 32 }} />,
   book: <BookOutlined style={{ fontSize: 32 }} />,
   linkedin: <LinkedinOutlined style={{ fontSize: 32 }} />,
+  github: <GithubOutlined style={{ fontSize: 32 }} />,
 };
 
 export function NavItem({
