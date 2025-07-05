@@ -40,17 +40,7 @@ export default function ContactEmailJSPage() {
     <div
       className={`${backgroundClass} flex flex-col items-center justify-center min-h-screen p-10 text-black`}
     >
-      <div className="flex flex-row items-center w-full max-w-xl mt-10 mb-8">
-        <Link
-          href="/"
-          className="text-2xl flex items-center gap-2"
-          aria-label="Go back to home"
-        >
-          <ArrowLeftOutlined style={{ fontSize: "2rem" }} />
-          <p className="text-sm">Go back</p>
-        </Link>
-        <h1 className="text-3xl font-bold ml-30">Contact Me</h1>
-      </div>
+      <h1 className="block text-3xl font-bold">Contact Me</h1>
       <form
         onSubmit={handleSubmit}
         className="bg-white p-10 rounded-xl shadow-lg w-full max-w-xl animate-fade-in"
@@ -113,6 +103,14 @@ export default function ContactEmailJSPage() {
           <p className="mt-4 text-red-600 animate-fade-in">{error}</p>
         )}
       </form>
+      <Link
+        href="/"
+        className="text-2xl flex items-center gap-2 mt-10"
+        aria-label="Go back to home"
+      >
+        <ArrowLeftOutlined style={{ fontSize: "2rem" }} />
+        <p className="text-sm">Go back</p>
+      </Link>
     </div>
   );
 }

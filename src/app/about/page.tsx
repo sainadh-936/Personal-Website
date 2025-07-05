@@ -5,15 +5,17 @@ import Head from "next/head";
 export default function AboutPage() {
   return (
     <div className="bg-main-gradient flex flex-col items-center justify-center min-h-screen relative text-black">
-      <main style={{ maxWidth: "800px", margin: "0 auto", padding: "2rem" }}>
-        <Link
-          href="/"
-          className="text-2xl flex items-center gap-2 mb-8"
-          aria-label="Go back to home"
-        >
-          <ArrowLeftOutlined style={{ fontSize: "2rem" }} />
-          <p className="text-sm">Go back</p>
-        </Link>
+      <main
+        style={{
+          maxWidth: "800px",
+          margin: "0 auto",
+          padding: "2rem",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Head>
           <title>About Me | Sainadh Jammigumpala</title>
           <meta
@@ -21,7 +23,7 @@ export default function AboutPage() {
             content="Software Engineer focused on full-stack development, bioinformatics, and scalable systems."
           />
         </Head>
-        <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>About Me</h1>
+        <h1 style={{ fontSize: "2.5rem", marginBottom: "2rem" }}>About Me</h1>
 
         <p style={{ fontSize: "1.1rem", lineHeight: "1.8" }}>
           I&apos;m <strong>Sainadh Jammigumpala</strong>, a full-stack software
@@ -61,6 +63,14 @@ export default function AboutPage() {
           engineer and contribute to real-world problem-solving.
         </p>
       </main>
+      <Link
+        href="/"
+        className="text-2xl flex items-center gap-2 mb-8"
+        aria-label="Go back to home"
+      >
+        <ArrowLeftOutlined style={{ fontSize: "2rem" }} />
+        <p className="text-sm">Go back</p>
+      </Link>
     </div>
   );
 }

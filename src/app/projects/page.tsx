@@ -71,17 +71,18 @@ export default function Projects() {
           content="Projects I've worked on at Strand Life Sciences and during internships."
         />
       </Head>
-      <main style={{ margin: "0 auto", padding: "2rem" }}>
-        <Link
-          href="/"
-          className="text-2xl flex items-center gap-2 mb-8 text-black"
-          aria-label="Go back to home"
-        >
-          <ArrowLeftOutlined style={{ fontSize: "2rem" }} />
-          <p className="text-sm">Go back</p>
-        </Link>
-        <h1 className="text-4xl font-bold mb-10 text-black">Projects</h1>
-        <div className="grid gap-8 md:grid-cols-2">
+      <main
+        style={{
+          margin: "0 auto",
+          padding: "2rem",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <h1 className="text-4xl font-bold mb-10 text-black w-full text-center">
+          Projects
+        </h1>
+        <div className="grid gap-10 md:grid-cols-2">
           {projects.map((project, idx) => (
             <section
               key={idx}
@@ -113,6 +114,14 @@ export default function Projects() {
             </section>
           ))}
         </div>
+        <Link
+          href="/"
+          className="text-2xl flex items-center justify-center gap-2 mt-10 text-black w-full"
+          aria-label="Go back to home"
+        >
+          <ArrowLeftOutlined style={{ fontSize: "2rem" }} />
+          <p className="text-sm">Go back</p>
+        </Link>
       </main>
     </div>
   );
