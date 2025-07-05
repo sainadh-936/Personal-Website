@@ -10,7 +10,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Contact Me", href: "/contact", icon: "mail" },
   {
     label: "Instagram",
-    href: "https://instagram.com/",
+    href: "https://www.instagram.com/jsn_manhwa/",
     icon: "instagram",
     external: true,
   },
@@ -19,7 +19,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Blog", href: "/blog", icon: "book" },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/",
+    href: "https://www.linkedin.com/in/sainadh-jammigumpala-a7a9a1196/",
     icon: "linkedin",
     external: true,
   },
