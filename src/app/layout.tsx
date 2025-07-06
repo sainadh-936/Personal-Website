@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,6 +51,7 @@ export default function RootLayout({
         <meta name="twitter:image" content="https://i.pravatar.cc/300?img=3" />
       </Head>
       <body className={`${bodyClass} bg-main-gradient`}>{children}</body>
+      <Analytics />
     </html>
   );
 }
